@@ -16,20 +16,25 @@ def generateDensity(fuzziness):
         lower_bound = density_low[0]
         upper_bound = density_low[1]
         x = np.random.randint(lower_bound, upper_bound, size=10)
-        print(x)
-        selected_data_user = int(input("Select a density from the above values: "))
+        print("The generated data for low density are :", x)
+       # print("Enter the fuzziness of {}:".format(first_context_attr))
+        selected_data_user = int(
+            input("Select a density from the above generated density values: "))
 
         if selected_data_user in x:
-            member_density = skf.trapmf(np.array([selected_data_user]), [0, 0, 15, 20])
+            member_density = skf.trapmf(
+                np.array([selected_data_user]), [0, 7, 14, 20])
+            print("The membership degree of selected value is:", member_density)
         else:
             print("Invalid selection,calculating randomly")
-            member_density = skf.trapmf(x, [0, 0, 15, 20])
+            member_density = skf.trapmf(x, [0, 7, 14, 20])
     elif fuzziness == "normal":
         lower_bound = density_normal[0]
         upper_bound = density_normal[1]
         x = np.random.randint(lower_bound, upper_bound, size=10)
-        print(x)
-        selected_data_user = int(input("Select a density from the above values: "))
+        print("The generated data for normal density is :", x)
+        selected_data_user = int(
+            input("Select a density from the above values: "))
 
         if selected_data_user in x:
             member_density = skf.trapmf(
@@ -42,8 +47,9 @@ def generateDensity(fuzziness):
         lower_bound = density_high[0]
         upper_bound = density_high[1]
         x = np.random.randint(lower_bound, upper_bound, size=10)
-        print(x)
-        selected_data_user = int(input("Select a density from the above values: "))
+        print("The generated data for high density is :", x)
+        selected_data_user = int(
+            input("Select a density from the above values: "))
 
         if selected_data_user in x:
             member_density = skf.trapmf(
@@ -66,10 +72,12 @@ def generateSpeed(fuzziness):
         upper_bound = speed_low[1]
         x = np.random.randint(lower_bound, upper_bound, size=10)
         print(x)
-        selected_data_user = int(input("Select a speed from the above values: "))
+        selected_data_user = int(
+            input("Select a speed from the above values: "))
 
         if selected_data_user in x:
-            member_speed = skf.trapmf(np.array([selected_data_user]), [0, 0, 35, 45])
+            member_speed = skf.trapmf(
+                np.array([selected_data_user]), [0, 0, 35, 45])
         else:
             print("Invalid selection,calculating randomly")
             member_speed = skf.trapmf(x, [0, 0, 35, 45])
@@ -79,10 +87,12 @@ def generateSpeed(fuzziness):
         upper_bound = speed_normal[1]
         x = np.random.randint(lower_bound, upper_bound, size=10)
         print(x)
-        selected_data_user = int(input("Select a speed from the above values: "))
+        selected_data_user = int(
+            input("Select a speed from the above values: "))
 
         if selected_data_user in x:
-            member_speed = skf.trapmf(np.array([selected_data_user]), [40, 45, 75, 80])
+            member_speed = skf.trapmf(
+                np.array([selected_data_user]), [40, 45, 75, 80])
         else:
             print("Invalid selection,calculating randomly")
             member_speed = skf.trapmf(x, [40, 45, 75, 80])
@@ -91,7 +101,8 @@ def generateSpeed(fuzziness):
         upper_bound = speed_high[1]
         x = np.random.randint(lower_bound, upper_bound, size=10)
         print(x)
-        selected_data_user = int(input("Select a speed from the above values: "))
+        selected_data_user = int(
+            input("Select a speed from the above values: "))
 
         if selected_data_user in x:
             member_speed = skf.trapmf(
